@@ -6,7 +6,7 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
     // Basic demo validation (replace with real validation or backend call)
     if (email && password) {
       alert(`Signed up successfully!\nEmail: ${email}`);
-      window.location.href = "home.html";
+      window.location.href = "index.html";
     } else {
       alert("Please enter valid credentials.");
     }
