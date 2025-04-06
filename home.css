@@ -887,7 +887,7 @@ form input, form select {
   display: block;
   font-size: 16px;
   font-weight: 600;
-  color: #0077b6;
+  color:black;
 }
 
 
@@ -909,13 +909,180 @@ form button {
   margin-top: 10px;
 }
 
-.suggestions-box {
-  margin-top: 20px;
-  padding: 18px;
-  background-color: #e1f5fe;
-  border-radius: 10px;
-  font-size: 15px;
+
+.header {
+  text-align: center;
 }
+
+.header img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.header h2 {
+  margin: 15px 0 5px;
+  font-size: 24px;
+  color: #333;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+.period-pain-relief {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fef1f6;
+}
+
+.period-pain-relief h2 {
+  font-size: 26px;
+  margin-bottom: 5px;
+  color:black;
+}
+
+.period-pain-relief p {
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.relief-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: 12px;
+}
+
+.poses-box, .suggestion-box {
+  flex: 1 1 48%;
+}
+
+.pose {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.pose img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.suggestion-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.suggestion-box h3 {
+  font-size: 20px;
+  color: #d1009f;
+  margin-bottom: 15px;
+}
+
+.suggestion-box ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .relief-container {
+    flex-direction: column;
+    border-radius: 12px;
+  }
+
+  .poses-box, .suggestion-box {
+    flex: 1 1 100%;
+  }
+
+  .pose img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.periods-info-section {
+  background-color: #f2f2f2;
+  padding: 60px 20px;
+}
+
+.periods-info-container {
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.periods-text {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.periods-text h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #cc3366;
+}
+
+.periods-text p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #444;
+  text-align: justify;
+}
+
+.periods-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffeef2;
+}
+
+.periods-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  padding: 20px;
+}
+.relief-heading {
+  font-size: 44px; /* 16px × 4 = 64px */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color:black/* Adjust color as needed */
+}
+.period-section p:first-child {
+  font-size: 64px;
+  font-weight: bold;
+  text-align: center;
+}
+
 
 
 

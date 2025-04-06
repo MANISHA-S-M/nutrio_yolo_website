@@ -622,8 +622,79 @@ function calculateCaloriesWomen() {
      <p>${foodSuggestion}</p>`;
 }
 </script>
-
+<section class="periods-info-section">
+  <div class="periods-info-container">
+    <div class="periods-text">
+      <h2>Understanding Menstrual Health</h2>
+      <p>
+        Menstruation, also known as a period, is a natural part of the reproductive cycle where the body sheds the uterine lining. It often comes with symptoms like cramps, fatigue, mood changes, and bloating. With the right care — including light movement, relaxation, and a balanced diet — discomfort can be managed effectively. This section is designed to support you with simple stretches and nourishing food suggestions to ease your period days.
+      </p>
+    </div>
+    <div class="periods-image">
+      <img src="pain.jpg" alt="Period Relief Image" />
+    </div>
+  </div>
 </section>
+
+<p class="relief-heading">Here Are Some Suggestions To Get Relief</p>
+
+  <p><i class="fa fa-clock"></i> 6 minutes &nbsp; 🔥 4 Workouts</p>
+
+  <div class="relief-container">
+    <!-- Left Side: Yoga Poses -->
+    <div class="poses-box">
+      <div class="pose">
+        <img src="p1.jpg" alt="Supported Child's Pose">
+        <div>
+          <strong>SUPPORTED CHILD'S POSE</strong><br>
+          01:30
+        </div>
+      </div>
+      <div class="pose">
+        <img src="p2.jpg" alt="Supported Pigeon Pose Left">
+        <div>
+          <strong>SUPPORTED PIGEON POSE LEFT</strong><br>
+          01:00
+        </div>
+      </div>
+      <div class="pose">
+        <img src="p3.jpg" alt="Supported Pigeon Pose Right">
+        <div>
+          <strong>SUPPORTED PIGEON POSE RIGHT</strong><br>
+          01:00
+        </div>
+      </div>
+      <div class="pose">
+        <img src="p4.jpg" alt="Supported Reclining Bound Angle Pose">
+        <div>
+          <strong>SUPPORTED RECLINING BOUND ANGLE POSE</strong><br>
+          01:30
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Suggested Foods -->
+    <div class="suggestion-box">
+      <h3>🍌 <span>Suggested Foods</span></h3>
+      <ul>
+        <li><strong>Bananas</strong> – Help reduce bloating & cramps</li>
+        <li><strong>Dark Chocolate</strong> – Relieves mood swings</li>
+        <li><strong>Leafy Greens</strong> – Replenish lost iron</li>
+        <li><strong>Ginger Tea</strong> – Anti-inflammatory & soothing</li>
+        <li><strong>Yogurt</strong> – Supports gut & hormonal balance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Optional: Add conditions if you want to show this only when "on period"
+  const onPeriod = true; // Toggle this based on user input if needed
+
+  if (!onPeriod) {
+    document.querySelector('.section-container').style.display = 'none';
+  }
+</script>
 <section id="nutrition-facts" class="nutrition-section">
   <h2>Food Nutrition Facts</h2>
   <p class="nutrition-intro">
