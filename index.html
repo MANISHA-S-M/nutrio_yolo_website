@@ -145,6 +145,187 @@
         <div class="swiper-button-prev"></div>
     </div>
 </section>
+<section class="health-info-section">
+  <h2>Basic requirement To Body</h2>
+
+  <div class="health-info">
+    <div class="info-box">
+      <h3>🩸 Blood Health</h3>
+      <p>Healthy blood ensures proper oxygen supply to your organs and tissues. It supports immune function, energy levels, and overall vitality.</p>
+      <ul>
+        <li>Helps in transporting oxygen & nutrients</li>
+        <li>Supports immunity and healing</li>
+        <li>Prevents fatigue, dizziness, and anemia</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <h3>💊 Vitamins</h3>
+      <p>Vitamins are essential for regulating body functions, boosting immunity, and improving cell growth and metabolism.</p>
+      <ul>
+        <li>Vitamin D for strong bones & immunity</li>
+        <li>Vitamin B12 for energy & brain function</li>
+        <li>Vitamin C for healing and skin health</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <h3>🦴 Bone Density</h3>
+      <p>Good bone density helps prevent fractures, osteoporosis, and supports mobility and strength especially as you age.</p>
+      <ul>
+        <li>Reduces risk of bone fractures</li>
+        <li>Improves posture and strength</li>
+        <li>Calcium & Magnesium rich foods help maintain density</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="health-check-section">
+  <h2>Check Your Health & Improve Your Health</h2>
+
+  <div class="inline-buttons">
+    <div class="icon-button" onclick="showForm('vitamin')">
+      <img src="vitamin.jpg" alt="Vitamin" />
+      <span>Vitamin</span>
+    </div>
+  
+    <div class="icon-button" onclick="showForm('blood')">
+      <img src="blood.png" alt="Blood Group" />
+      <span>Blood Group</span>
+    </div>
+  
+    <div class="icon-button" onclick="showForm('bone')">
+      <img src="bone.png" alt="Bone Density" />
+      <span>Bone Density</span>
+    </div>
+  </div>
+  
+  
+  <div id="form-container"></div>
+  <div id="suggestions" class="suggestions-box"></div>
+</section>
+<script>
+  function showForm(type) {
+    const formContainer = document.getElementById('form-container');
+    const suggestions = document.getElementById('suggestions');
+    suggestions.innerHTML = "";
+  
+    let extraInputs = `
+      <input type="number" id="age" placeholder="Enter your age" required><br>
+      <select id="ageGroup" required>
+        <option value="" disabled selected>Select Age Group</option>
+        <option value="child">Child</option>
+        <option value="adult">Adult</option>
+        <option value="old">Old Age</option>
+      </select><br>
+    `;
+  
+    if (type === 'vitamin') {
+      formContainer.innerHTML = `
+        <form onsubmit="checkVitamin(event)">
+          ${extraInputs}
+          <select id="vitaminType" required>
+            <option value="" disabled selected>Select Vitamin Deficiency</option>
+            <option value="D">Vitamin D</option>
+            <option value="C">Vitamin C</option>
+            <option value="B12">Vitamin B12</option>
+          </select><br>
+          <button type="submit">Get Suggestion</button>
+        </form>
+      `;
+    }
+  
+    if (type === 'blood') {
+      formContainer.innerHTML = `
+        <form onsubmit="checkBlood(event)">
+          ${extraInputs}
+          <select id="bloodType" required>
+            <option value="" disabled selected>Select Blood Group</option>
+            <option value="A+">A+</option>
+            <option value="B+">B+</option>
+            <option value="AB+">AB+</option>
+            <option value="O+">O+</option>
+            <option value="A-">A-</option>
+            <option value="B-">B-</option>
+            <option value="AB-">AB-</option>
+            <option value="O-">O-</option>
+          </select><br>
+          <button type="submit">Get Suggestion</button>
+        </form>
+      `;
+    }
+  
+    if (type === 'bone') {
+      formContainer.innerHTML = `
+        <form onsubmit="checkBone(event)">
+          ${extraInputs}
+          <select id="boneStatus" required>
+            <option value="" disabled selected>Bone Density Condition</option>
+            <option value="low">Low Density</option>
+            <option value="normal">Normal</option>
+          </select><br>
+          <button type="submit">Get Suggestion</button>
+        </form>
+      `;
+    }
+  }
+  
+  function checkVitamin(event) {
+    event.preventDefault();
+    const vit = document.getElementById('vitaminType').value;
+    const ageGroup = document.getElementById('ageGroup').value;
+  
+    let suggestion = "";
+  
+    if (vit === 'D') {
+      suggestion = 'Vitamin D Deficiency: Eat mushrooms, fortified milk, eggs. Get sunlight. ';
+    } else if (vit === 'C') {
+      suggestion = 'Vitamin C Deficiency: Eat oranges, bell peppers, guava, kiwi. ';
+    } else if (vit === 'B12') {
+      suggestion = 'Vitamin B12 Deficiency: Include fish, dairy, meat, and fortified cereals. ';
+    }
+  
+    suggestion += ageNote(ageGroup);
+    document.getElementById('suggestions').innerText = suggestion;
+  }
+  
+  function checkBlood(event) {
+    event.preventDefault();
+    const blood = document.getElementById('bloodType').value;
+    const ageGroup = document.getElementById('ageGroup').value;
+  
+    let suggestion = `Blood Group ${blood}: Focus on leafy greens, iron-rich foods, citrus fruits for absorption. `;
+    suggestion += ageNote(ageGroup);
+  
+    document.getElementById('suggestions').innerText = suggestion;
+  }
+  
+  function checkBone(event) {
+    event.preventDefault();
+    const density = document.getElementById('boneStatus').value;
+    const ageGroup = document.getElementById('ageGroup').value;
+  
+    let suggestion = "";
+    if (density === 'low') {
+      suggestion = 'Low Bone Density: Increase intake of calcium (dairy, almonds, leafy greens) and magnesium (seeds, nuts, whole grains). ';
+    } else {
+      suggestion = 'Normal Bone Density: Maintain with dairy, exercise, leafy vegetables. ';
+    }
+  
+    suggestion += ageNote(ageGroup);
+    document.getElementById('suggestions').innerText = suggestion;
+  }
+  
+  function ageNote(group) {
+    if (group === 'child') return "Children need balanced diets rich in proteins, calcium, and vitamins for growth.";
+    if (group === 'adult') return "Adults should focus on maintaining energy and immunity with a nutrient-dense diet.";
+    if (group === 'old') return "Older adults need more calcium, Vitamin D, and fiber to support bones and digestion.";
+    return "";
+  }
+  </script>
+  
+
+  
 
 <!-- Swiper.js & JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
