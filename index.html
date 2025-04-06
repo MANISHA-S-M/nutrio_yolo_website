@@ -386,6 +386,56 @@
   </div>
 </section>
 
+
+<div id="mainContent" class="main-section">
+  <!-- Left Section -->
+  <div class="container">
+    <h2 class="title">Know Your Food: Nutrition Facts</h2>
+    <p>
+      Eating healthy starts with understanding your food. Every ingredient you consume contributes to your overall well-being. 
+      <strong>Proteins</strong> help build and repair tissues, <strong>carbohydrates</strong> fuel your body with energy, and <strong>fats</strong> are essential for cell function and hormone production.
+      Don't forget, <strong>calories</strong> are the total energy you get from food — balance is key to a healthy life!
+    </p>
+  </div>
+
+  <!-- Right Section -->
+  <div class="form-container">
+    <h2>Input Nutrition Values</h2>
+    <form id="nutritionForm">
+      <input type="text" id="productName" placeholder="Product Name" required>
+      <input type="number" id="quantity" placeholder="Quantity (e.g. 100)" required>
+      <input type="number" id="carbs" placeholder="Carbohydrates (g)" required>
+      <input type="number" id="proteins" placeholder="Proteins (g)" required>
+      <input type="number" id="fat" placeholder="Fat (g)" required>
+      <input type="number" id="calories" placeholder="Calories" required>
+      <button type="submit">Generate Graph</button>
+    </form>
+  </div>
+</div>
+
+<!-- Graph Modal -->
+<div id="graphModal" class="graph-modal">
+  <div class="graph-content">
+    <button id="closeGraph">&times;</button>
+    <canvas id="nutritionChart" width="300" height="250"></canvas>
+  </div>
+</div>
+<div id="graphModal" class="graph-modal">
+  <div class="graph-content">
+    <button id="closeGraph">&times;</button>
+    <canvas id="nutritionChart" width="300" height="250"></canvas>
+  </div>
+</div>
+
+
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+
+
+
   <section class="calorie-info-section">
     <div class="left-content">
       <h2>CHECK YOUR CALORIES</h2>
